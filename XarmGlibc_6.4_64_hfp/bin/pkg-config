@@ -1,0 +1,2 @@
+#!/bin/sh
+PKG_CONFIG_LIBDIR=${PKG_CONFIG_LIBDIR:-/Devel/NOVAsom_SDK/Xcompiler/XarmGlibc_6.4_64_hfp/aarch64-buildroot-linux-gnu/sysroot/usr/lib/pkgconfig:/Devel/NOVAsom_SDK/Xcompiler/XarmGlibc_6.4_64_hfp/aarch64-buildroot-linux-gnu/sysroot/usr/share/pkgconfig} PKG_CONFIG_SYSROOT_DIR=${PKG_CONFIG_SYSROOT_DIR:-/Devel/NOVAsom_SDK/Xcompiler/XarmGlibc_6.4_64_hfp/aarch64-buildroot-linux-gnu/sysroot} $(dirname $0)/pkgconf  $@
