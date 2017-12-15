@@ -25,6 +25,7 @@
 #define _DVBVIDEO_H_
 
 #include <linux/types.h>
+#include <stdint.h>
 #include <time.h>
 
 typedef enum {
@@ -132,8 +133,7 @@ struct video_event {
 #define VIDEO_EVENT_FRAME_RATE_CHANGED	2
 #define VIDEO_EVENT_DECODER_STOPPED 	3
 #define VIDEO_EVENT_VSYNC 		4
-	/* unused, make sure to use atomic time for y2038 if it ever gets used */
-	long timestamp;
+	__kernel_time_t timestamp;
 	union {
 		video_size_t size;
 		unsigned int frame_rate;	/* in frames per 1000sec */
@@ -205,8 +205,7 @@ typedef __u16 video_attributes_t;
 /*    6    line 21-2 data present in GOP (1=yes, 0=no) */
 /*    5- 3 source resolution (0=720x480/576, 1=704x480/576, 2=352x480/57 */
 /*    2    source letterboxed (1=yes, 0=no) */
-/*    0    film/camera mode (0=
- *camera, 1=film (625/50 only)) */
+/*    0    film/camera mode (0=camera, 1=film (625/50 only)) */
 
 
 /* bit definitions for capabilities: */
